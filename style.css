@@ -1,0 +1,30 @@
+.main {
+  margin: auto;
+  width: 400px;
+}
+.main,
+.display,
+.number,
+.operator {
+  border: 1px solid black;
+}
+.display {
+  margin: auto;
+  background-color: grey;
+  height: 10vh;
+}
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.number,
+.operator {
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
