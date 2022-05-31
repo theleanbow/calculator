@@ -5,13 +5,18 @@
 .main,
 .display,
 .number,
-.operator {
+.operator,
+.extra {
   border: 1px solid black;
 }
 .display {
   margin: auto;
   background-color: grey;
   height: 10vh;
+  font-size: 3rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
 }
 .row {
   display: flex;
@@ -19,7 +24,8 @@
 }
 
 .number,
-.operator {
+.operator,
+.extra {
   width: 100px;
   height: 100px;
   box-sizing: border-box;
@@ -27,4 +33,18 @@
   justify-content: center;
   align-items: center;
   font-size: 2rem;
+  border-radius: 15px;
+}
+
+.zero {
+  flex-grow: 2;
+}
+.number {
+  background-color: antiquewhite;
+}
+.operator {
+  background-color: aliceblue;
+}
+.extra {
+  background-color: beige;
 }
