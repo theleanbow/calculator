@@ -1,3 +1,25 @@
+let display = document.querySelector(".display");
+let displayValue = "";
+function num() {
+  let numbers = document.querySelectorAll(".number");
+  numbers.forEach((number) =>
+    number.addEventListener("click", function () {
+      displayValue += number.innerText;
+      display.innerHTML = displayValue;
+    })
+  );
+}
+let operatorSym = "";
+function opr() {
+  let operators = document.querySelectorAll(".operator");
+  operators.forEach((operator) =>
+    operator.addEventListener("click", function () {
+      operatorSym = operator.innerText;
+      console.log(operatorSym);
+    })
+  );
+}
+
 function add(num1, num2) {
   return num1 + num2;
 }
@@ -25,16 +47,5 @@ function operate(operator, num1, num2) {
       return divide(num1, num2);
   }
 }
-// console.log(operate("+", 1, 1));
-
-let displayValue = "";
-function abc() {
-  let values = document.querySelectorAll(".key");
-  values.forEach((value) =>
-    value.addEventListener("click", function () {
-      displayValue += value.innerText;
-      console.log(displayValue);
-    })
-  );
-}
-abc();
+opr();
+num();
