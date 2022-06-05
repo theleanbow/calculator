@@ -23,6 +23,12 @@ function opr() {
   let operators = document.querySelectorAll(".operator");
   operators.forEach((operatorSym) =>
     operatorSym.addEventListener("click", function () {
+      if (num2 != "") {
+        operate(operator, num1, num2);
+
+        num1 = display.innerText;
+        num2 = "";
+      }
       window.operator = operatorSym.innerText;
       displayValue = "";
     })
@@ -49,7 +55,7 @@ function correct() {
 }
 
 function add(num1, num2) {
-  display.innerText = num1 + num2;
+  display.innerText = parseFloat(num1) + parseFloat(num2);
 }
 function subtract(num1, num2) {
   display.innerText = num1 - num2;
@@ -62,6 +68,9 @@ function divide(num1, num2) {
 }
 
 function operate(operator, num1, num2) {
+  if (Number.isNaN(display.innerText)) {
+    display.innerText = num1;
+  }
   switch (operator) {
     case "+":
       add(num1, num2);
@@ -76,10 +85,6 @@ function operate(operator, num1, num2) {
       divide(num1, num2);
       break;
   }
-  if (num2 != "") {
-    operate(operator, num1, num2);
-  }
-  num1 = display.innerText;
 }
 
 function main() {
