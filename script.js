@@ -76,6 +76,9 @@ function operate(operator, num1, num2) {
       divide(num1, num2);
       break;
   }
+  if (num2 != "") {
+    operate(operator, num1, num2);
+  }
   num1 = display.innerText;
 }
 
@@ -85,17 +88,13 @@ function main() {
   clear();
   correct();
   operate(num1, num2, operator);
-  print();
   equals();
 }
-main();
-function print() {
-  console.log(num1, operator, num2, displayValue);
-}
-
 function equals() {
   equals = document.querySelector(".equals");
   equals.addEventListener("click", () => {
     operate(operator, num1, num2);
   });
 }
+
+main();

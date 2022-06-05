@@ -1,6 +1,6 @@
 .main {
   margin: auto;
-  width: 400px;
+  width: 500px;
 }
 .main,
 .display,
@@ -28,8 +28,9 @@
 .operator,
 .extra,
 .equals {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
+  margin: 5px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -37,7 +38,6 @@
   font-size: 2rem;
   border-radius: 15px;
 }
-
 .zero {
   flex-grow: 2;
 }
