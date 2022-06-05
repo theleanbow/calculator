@@ -9,7 +9,7 @@ function disp() {
   numbers.forEach((number) =>
     number.addEventListener("click", function () {
       displayValue += number.innerText;
-      display.innerHTML = displayValue;
+      display.innerText = displayValue;
       if (window.operator != "") {
         window.num2 = displayValue;
       } else {
@@ -41,6 +41,7 @@ function clear() {
     display.innerText = "";
     num1 = "";
     num2 = "";
+    operator = "";
   });
 }
 function correct() {
@@ -48,6 +49,7 @@ function correct() {
   correct.addEventListener("click", () => {
     displayValue = displayValue.slice(0, displayValue.length - 1);
     display.innerText = displayValue;
+    num1 = displayValue;
   });
 }
 
@@ -61,7 +63,7 @@ function multiply(num1, num2) {
   display.innerText = num1 * num2;
 }
 function divide(num1, num2) {
-  if (num2 === 0) return "Error";
+  // if (num2 === 0) display.innerText = "Error";
   display.innerText = num1 / num2;
 }
 
