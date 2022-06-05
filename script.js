@@ -25,15 +25,10 @@ function opr() {
     operatorSym.addEventListener("click", function () {
       window.operator = operatorSym.innerText;
       displayValue = "";
-      // console.log(operatorSym);
     })
   );
 }
 
-// function calculate(num1, num2, operator) {
-//   num1 = parseInt(num1);
-//   num2 = parseInt(num2);
-// }
 function clear() {
   let ac = document.querySelector(".ac");
   ac.addEventListener("click", () => {
@@ -63,7 +58,6 @@ function multiply(num1, num2) {
   display.innerText = num1 * num2;
 }
 function divide(num1, num2) {
-  // if (num2 === 0) display.innerText = "Error";
   display.innerText = num1 / num2;
 }
 
