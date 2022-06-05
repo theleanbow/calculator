@@ -52,31 +52,35 @@ function correct() {
 }
 
 function add(num1, num2) {
-  return num1 + num2;
+  display.innerText = num1 + num2;
 }
 function subtract(num1, num2) {
-  return num1 - num2;
+  display.innerText = num1 - num2;
 }
 function multiply(num1, num2) {
-  return num1 * num2;
+  display.innerText = num1 * num2;
 }
 function divide(num1, num2) {
   if (num2 === 0) return "Error";
-  return num1 / num2;
+  display.innerText = num1 / num2;
 }
 
 function operate(operator, num1, num2) {
-  console.log(operator, num1, num2);
   switch (operator) {
     case "+":
-      return add(num1, num2);
+      add(num1, num2);
+      break;
     case "-":
-      return subtract(num1, num2);
+      subtract(num1, num2);
+      break;
     case "*":
-      return multiply(num1, num2);
+      multiply(num1, num2);
+      break;
     case "/":
-      return divide(num1, num2);
+      divide(num1, num2);
+      break;
   }
+  num1 = display.innerText;
 }
 
 function main() {
@@ -86,7 +90,7 @@ function main() {
   correct();
   operate(num1, num2, operator);
   print();
-  // equal();
+  equals();
 }
 main();
 function print() {
