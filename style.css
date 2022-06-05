@@ -6,7 +6,8 @@
 .display,
 .number,
 .operator,
-.extra {
+.extra,
+.equals {
   border: 1px solid black;
 }
 .display {
@@ -25,7 +26,8 @@
 
 .number,
 .operator,
-.extra {
+.extra,
+.equals {
   width: 100px;
   height: 100px;
   box-sizing: border-box;
