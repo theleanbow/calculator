@@ -2,17 +2,25 @@
   margin: auto;
   width: 500px;
 }
+.key {
+  cursor: pointer;
+}
+.key:hover {
+  background-color: darkkhaki;
+}
+
 .main,
-.display,
 .number,
 .operator,
 .extra,
-.equals {
+.equals,
+.dot {
   border: 1px solid black;
 }
 .display {
   margin: auto;
-  background-color: grey;
+  border-bottom: 1px solid black;
+  /* background-color: grey; */
   height: 10vh;
   font-size: 3rem;
   display: flex;
@@ -27,7 +35,8 @@
 .number,
 .operator,
 .extra,
-.equals {
+.equals,
+.dot {
   width: 120px;
   height: 120px;
   margin: 5px;
@@ -41,7 +50,8 @@
 .zero {
   flex-grow: 2;
 }
-.number {
+.number,
+.dot {
   background-color: antiquewhite;
 }
 .operator {
