@@ -1,21 +1,18 @@
 let num1 = "";
 let num2 = "";
 let operator = "";
-let hasResult = false;
-
+let dot = document.querySelector(".dot");
 let display = document.querySelector(".display");
 let displayValue = "";
 function disp() {
   let numbers = document.querySelectorAll(".number");
   numbers.forEach((number) =>
     number.addEventListener("click", function () {
-      if (hasResult == true) {
-        num1 = "";
-        num2 = "";
-        operator = "";
-      }
       displayValue += number.innerText;
       display.innerText = displayValue;
+      if (displayValue.includes(".")) {
+        dot.disabled = true;
+      }
       if (operator != "") {
         num2 = displayValue;
       } else {
@@ -33,6 +30,7 @@ function opr() {
         operate(operator, num1, num2);
       }
       operator = operatorSym.innerText;
+      dot.disabled = false;
       displayValue = "";
       num1 = display.innerText;
     })
@@ -44,6 +42,7 @@ function clear() {
   ac.addEventListener("click", () => {
     displayValue = "";
     display.innerText = "";
+    dot.disabled = false;
     num1 = "";
     num2 = "";
     operator = "";
@@ -55,9 +54,14 @@ function correct() {
     displayValue = displayValue.slice(0, displayValue.length - 1);
     display.innerText = displayValue;
     num1 = displayValue;
+    dot.disabled = false;
   });
 }
+// function dot(){
+//   dot.addEventListener("click",()=>{
 
+//   })
+// }
 function add(num1, num2) {
   display.innerText = parseFloat(num1) + parseFloat(num2);
 }
@@ -107,6 +111,7 @@ function equals() {
     num2 = "";
     operator = "";
     displayValue = "";
+    dot.disabled = false;
   });
 }
 
