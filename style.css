@@ -20,7 +20,7 @@
 .display {
   margin: auto;
   border-bottom: 1px solid black;
-  /* background-color: grey; */
+
   height: 10vh;
   font-size: 3rem;
   display: flex;
