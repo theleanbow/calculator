@@ -1,6 +1,7 @@
-window.num1 = "";
-window.num2 = "";
-window.operator = "";
+let num1 = "";
+let num2 = "";
+let operator = "";
+let hasResult = false;
 
 let display = document.querySelector(".display");
 let displayValue = "";
@@ -8,12 +9,17 @@ function disp() {
   let numbers = document.querySelectorAll(".number");
   numbers.forEach((number) =>
     number.addEventListener("click", function () {
+      if (hasResult == true) {
+        num1 = "";
+        num2 = "";
+        operator = "";
+      }
       displayValue += number.innerText;
       display.innerText = displayValue;
-      if (window.operator != "") {
-        window.num2 = displayValue;
+      if (operator != "") {
+        num2 = displayValue;
       } else {
-        window.num1 = displayValue;
+        num1 = displayValue;
       }
     })
   );
@@ -25,12 +31,10 @@ function opr() {
     operatorSym.addEventListener("click", function () {
       if (num2 != "") {
         operate(operator, num1, num2);
-
-        num1 = display.innerText;
-        num2 = "";
       }
-      window.operator = operatorSym.innerText;
+      operator = operatorSym.innerText;
       displayValue = "";
+      num1 = display.innerText;
     })
   );
 }
@@ -99,6 +103,10 @@ function equals() {
   equals = document.querySelector(".equals");
   equals.addEventListener("click", () => {
     operate(operator, num1, num2);
+    num1 = "";
+    num2 = "";
+    operator = "";
+    displayValue = "";
   });
 }
 
