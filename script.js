@@ -2,6 +2,7 @@ let num1 = "";
 let num2 = "";
 let operator = "";
 let dot = document.querySelector(".dot");
+let showOperator = document.querySelector(".showOperator");
 let display = document.querySelector(".display");
 let displayValue = "";
 function disp() {
@@ -12,9 +13,12 @@ function disp() {
       display.innerText = displayValue;
       if (displayValue.includes(".")) {
         dot.disabled = true;
+      } else {
+        dot.disabled = false;
       }
       if (operator != "") {
         num2 = displayValue;
+        // showOperator.innerText = "";
       } else {
         num1 = displayValue;
       }
@@ -30,6 +34,7 @@ function opr() {
         operate(operator, num1, num2);
       }
       operator = operatorSym.innerText;
+      showOperator.innerText = operator;
       dot.disabled = false;
       displayValue = "";
       num1 = display.innerText;
@@ -46,6 +51,7 @@ function clear() {
     num1 = "";
     num2 = "";
     operator = "";
+    showOperator.innerText = "";
   });
 }
 function correct() {
@@ -54,14 +60,8 @@ function correct() {
     displayValue = displayValue.slice(0, displayValue.length - 1);
     display.innerText = displayValue;
     num1 = displayValue;
-    dot.disabled = false;
   });
 }
-// function dot(){
-//   dot.addEventListener("click",()=>{
-
-//   })
-// }
 function add(num1, num2) {
   display.innerText = parseFloat(num1) + parseFloat(num2);
 }
@@ -111,6 +111,7 @@ function equals() {
     num2 = "";
     operator = "";
     displayValue = "";
+    showOperator.innerText = "";
     dot.disabled = false;
   });
 }

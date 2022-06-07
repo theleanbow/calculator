@@ -8,7 +8,10 @@
 .key:hover {
   background-color: darkkhaki;
 }
-
+.screen {
+  display: flex;
+  justify-content: flex-end;
+}
 .main,
 .number,
 .operator,
@@ -17,15 +20,13 @@
 .dot {
   border: 1px solid black;
 }
-.display {
-  margin: auto;
+.screen {
   border-bottom: 1px solid black;
-
   height: 10vh;
   font-size: 3rem;
   display: flex;
   align-items: flex-end;
-  justify-content: end;
+  justify-content: space-between;
 }
 .row {
   display: flex;
