@@ -18,7 +18,6 @@ function disp() {
       }
       if (operator != "") {
         num2 = displayValue;
-        // showOperator.innerText = "";
       } else {
         num1 = displayValue;
       }
@@ -62,23 +61,25 @@ function correct() {
     num1 = displayValue;
   });
 }
+
 function add(num1, num2) {
-  display.innerText = parseFloat(num1) + parseFloat(num2);
+  display.innerText = (parseFloat(num1) + parseFloat(num2)).toFixed(10) * 1;
 }
 function subtract(num1, num2) {
-  display.innerText = num1 - num2;
+  display.innerText = (num1 - num2).toFixed(10) * 1;
 }
 function multiply(num1, num2) {
-  display.innerText = num1 * num2;
+  display.innerText = (num1 * num2).toFixed(10) * 1;
 }
 function divide(num1, num2) {
-  display.innerText = num1 / num2;
+  display.innerText = (num1 / num2).toFixed(10) * 1;
 }
-
-function operate(operator, num1, num2) {
-  if (Number.isNaN(display.innerText)) {
-    display.innerText = num1;
+function modulus(num1, num2) {
+  if (num1) {
+    display.innerText = num1 % num2;
   }
+}
+function operate(operator, num1, num2) {
   switch (operator) {
     case "+":
       add(num1, num2);
@@ -92,16 +93,9 @@ function operate(operator, num1, num2) {
     case "/":
       divide(num1, num2);
       break;
+    case "mod":
+      modulus(num1, num2);
   }
-}
-
-function main() {
-  disp();
-  opr();
-  clear();
-  correct();
-  operate(num1, num2, operator);
-  equals();
 }
 function equals() {
   equals = document.querySelector(".equals");
@@ -116,4 +110,10 @@ function equals() {
   });
 }
 
-main();
+disp();
+opr();
+clear();
+correct();
+operate(num1, num2, operator);
+equals();
+modulus();
