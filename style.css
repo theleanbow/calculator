@@ -1,6 +1,6 @@
 .main {
   margin: auto;
-  width: 500px;
+  width: 400px;
 }
 .key {
   cursor: pointer;
@@ -38,8 +38,8 @@
 .extra,
 .equals,
 .dot {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   margin: 5px;
   box-sizing: border-box;
   display: flex;
