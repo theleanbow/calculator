@@ -10,6 +10,9 @@ function disp() {
   numbers.forEach((number) =>
     number.addEventListener("click", function () {
       displayValue += number.innerText;
+      if (displayValue === ".") {
+        displayValue = "0.";
+      }
       display.innerText = displayValue;
       if (displayValue.includes(".")) {
         dot.disabled = true;
