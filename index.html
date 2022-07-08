@@ -1,52 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <h1>Calculator</h1>
-    <div class="main">
-      <div class="screen">
-        <div class="showOperator"></div>
-        <div class="display"></div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <h1>Calculator</h1>
+  <div class="main">
+    <div class="screen">
+      <div class="showOperator"></div>
+      <div class="display"></div>
+    </div>
+    <div class="keypad">
+      <div class="row zero">
+        <button class="extra key ac">AC</button>
+        <button class="extra key correct">&lt;x</button>
+        <button class="extra key operator">mod</button>
+        <button class="operator key">/</button>
       </div>
-      <div class="keypad">
-        <div class="row zero">
-          <button class="extra key ac">AC</button>
-          <button class="extra key correct">&lt;x</button>
-          <button class="extra key operator">mod</button>
-          <button class="operator key">/</button>
-        </div>
-        <div class="row one">
-          <button class="number key">7</button>
-          <button class="number key">8</button>
-          <button class="number key">9</button>
-          <button class="operator key">*</button>
-        </div>
-        <div class="row two">
-          <button class="number key">4</button>
-          <button class="number key">5</button>
-          <button class="number key">6</button>
-          <button class="operator key">-</button>
-        </div>
-        <div class="row three">
-          <button class="number key">1</button>
-          <button class="number key">2</button>
-          <button class="number key">3</button>
-          <button class="operator key">+</button>
-        </div>
-        <div class="row four">
-          <button class="number zero key">0</button>
-          <button class="number dot key">.</button>
-          <!-- <div class="operator">+</div> -->
-          <button class="equals key">=</button>
-        </div>
+      <div class="row one">
+        <button class="number key">7</button>
+        <button class="number key">8</button>
+        <button class="number key">9</button>
+        <button class="operator key">*</button>
+      </div>
+      <div class="row two">
+        <button class="number key">4</button>
+        <button class="number key">5</button>
+        <button class="number key">6</button>
+        <button class="operator key">-</button>
+      </div>
+      <div class="row three">
+        <button class="number key">1</button>
+        <button class="number key">2</button>
+        <button class="number key">3</button>
+        <button class="operator key">+</button>
+      </div>
+      <div class="row four">
+        <button class="number zero key">0</button>
+        <button class="number dot key">.</button>
+        <!-- <div class="operator">+</div> -->
+        <button class="operator key percentage">%</button>
+        <button class="equals key">=</button>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

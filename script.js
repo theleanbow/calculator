@@ -40,6 +40,9 @@ function opr() {
       dot.disabled = false;
       displayValue = "";
       num1 = display.innerText;
+      if (operator == "%") {
+        display.innerText = (num1 / 100).toFixed(10) * 1;
+      }
     })
   );
 }
@@ -64,40 +67,23 @@ function correct() {
     num1 = displayValue;
   });
 }
-
-function add(num1, num2) {
-  display.innerText = (parseFloat(num1) + parseFloat(num2)).toFixed(10) * 1;
-}
-function subtract(num1, num2) {
-  display.innerText = (num1 - num2).toFixed(10) * 1;
-}
-function multiply(num1, num2) {
-  display.innerText = (num1 * num2).toFixed(10) * 1;
-}
-function divide(num1, num2) {
-  display.innerText = (num1 / num2).toFixed(10) * 1;
-}
-function modulus(num1, num2) {
-  if (num1) {
-    display.innerText = num1 % num2;
-  }
-}
 function operate(operator, num1, num2) {
   switch (operator) {
     case "+":
-      add(num1, num2);
+      display.innerText = (parseFloat(num1) + parseFloat(num2)).toFixed(10) * 1;
       break;
     case "-":
-      subtract(num1, num2);
+      display.innerText = (num1 - num2).toFixed(10) * 1;
       break;
     case "*":
-      multiply(num1, num2);
+      display.innerText = (num1 * num2).toFixed(10) * 1;
       break;
     case "/":
-      divide(num1, num2);
+      display.innerText = (num1 / num2).toFixed(10) * 1;
       break;
     case "mod":
-      modulus(num1, num2);
+      display.innerText = (num1 % num2).toFixed(10) * 1;
+      break;
   }
 }
 function equals() {
@@ -119,4 +105,3 @@ clear();
 correct();
 operate(num1, num2, operator);
 equals();
-modulus();
